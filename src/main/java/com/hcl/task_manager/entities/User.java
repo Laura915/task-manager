@@ -1,8 +1,8 @@
 package com.hcl.task_manager.entities;
 
 import javax.persistence.*;
-import javax.persistence.Id;
 
+@Table(name = "users")
 @Entity 
 public class User {
     @Id
@@ -35,7 +35,7 @@ public class User {
         return username;
     }
 
-    public void setName(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
