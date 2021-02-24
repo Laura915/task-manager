@@ -19,6 +19,17 @@ public class UserService {
 
 			userRepository.save(newUser);
 		}
+	 public boolean searchUser(String username,String password) {
+			Iterable<User> users = userRepository.findAll();
+			
+			for (User user : users) {
+				if(user.getUsername().toLowerCase().equals(username.toLowerCase()) && user.getPassword().toLowerCase().equals(password.toLowerCase())) {
+					
+					return true;
+				}
+			}
+			return false;
+	 }
 	 
 	
 

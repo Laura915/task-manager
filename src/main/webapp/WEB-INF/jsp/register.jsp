@@ -17,7 +17,7 @@
 		<input type="text" name="password" /> </br>
 		<button type="submit">Submit</button>
 	</form>
-	<!-- <a href="/login">Login Here</a> -->
+	 <a href="/login">Login Here</a> 
 
 </body>
 </html>
