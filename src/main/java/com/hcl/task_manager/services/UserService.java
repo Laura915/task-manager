@@ -1,10 +1,13 @@
 package com.hcl.task_manager.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hcl.task_manager.entities.User;
 import com.hcl.task_manager.repositories.UserRepository;
+
 
 @Service
 public class UserService {
@@ -29,6 +32,10 @@ public class UserService {
 				}
 			}
 			return false;
+	 }
+	
+	 public Optional<User> findByUserName(String username) {
+	 return userRepository.findByUsername(username);
 	 }
 	 
 	

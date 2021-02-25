@@ -5,23 +5,20 @@ import java.util.List;
 
 import javax.persistence.*;
 
-@Table(name = "user")
-@Entity 
+@Entity
+@Table(name = "user") 
 public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-
     private String username;
-
     private String email;
-
     private String password;
     
-    //Join table
-    @OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn( name = "usr_id", referencedColumnName = "id")
-	List<Task> tasks = new ArrayList<>();
+    //Join table    
+    @ManyToMany(cascade = CascadeType.MERGE)
+    @JoinColumn( name = "userId", referencedColumnName = "id")
+    List<Task> tasks = new ArrayList<>();
 
     public String getPassword() {
         return password;
@@ -55,11 +52,11 @@ public class User {
         this.email = email;
     }
     //Task 
-    public List<Task> getTask() {
-		return tasks;
-	}
-
-	public void setTasks(List<Task> tasks) {
-		this.tasks = tasks;
-	}
+//    public List<Task> getTask() {
+//		return tasks;
+//	}
+//
+//	public void setTasks(List<Task> tasks) {
+//		this.tasks = tasks;
+//	}
 }

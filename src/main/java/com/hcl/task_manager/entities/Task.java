@@ -1,41 +1,18 @@
 package com.hcl.task_manager.entities;
 
 import javax.persistence.*;
-import java.util.Date;
-
-@Table(name = "task")
 @Entity 
+@Table(name = "task")
 public class Task {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-
     private String taskName;
-
-//    private Date startDate;
-//
-//    private Date endDate;
-
     private String description;
-
     private String email;
-
     private String severity;
+    private Long userId;
     
-    public Task() {
-		
-	}
-	
-	public Task(String taskName,String description,String email,String severity) {
-		super();
-		this.taskName = taskName;
-//		this.startDate = startDate;
-//		this.endDate = endDate;
-		this.description = description;
-		this.email = email;
-		this.severity = severity;
-	}
-
     public Long getId() {
         return id;
     }
@@ -51,22 +28,6 @@ public class Task {
     public void setTaskName(String taskName) {
         this.taskName = taskName;
     }
-
-//    public Date getStartDate() {
-//        return startDate;
-//    }
-//
-//    public void setStartDate(Date startDate) {
-//        this.startDate = startDate;
-//    }
-
-//    public Date getEndDate() {
-//        return endDate;
-//    }
-//
-//    public void setEndDate(Date endDate) {
-//        this.endDate = endDate;
-//    }
 
     public String getDescription() {
         return description;
@@ -91,12 +52,10 @@ public class Task {
     public void setSeverity(String severity) {
         this.severity = severity;
     }
-
-//    public User getUser() {
-//        return user;
-//    }
-//
-//    public void setUser(User user) {
-//        this.user = user;
-//    }
+    public Long getUserId() {
+        return userId;
+    }
+    public void setUserId(Long userID) {
+    	this.userId=userID;
+    }
 }

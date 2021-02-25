@@ -12,12 +12,11 @@ public class TaskService {
     private TaskRepository taskRepository; 
 	
     //save task
-	public void saveTask(String taskName,String description,String email,String severity) {
+	public void saveTask(Long userId ,String taskName,String description,String email,String severity) {
 		Task newTask = new Task();
 		
+		newTask.setUserId(userId);
 		newTask.setTaskName(taskName);
-//		newTask.setStartDate(startDate);
-//		newTask.setEndDate(endDate);
 		newTask.setDescription(description);
 		newTask.setEmail(email);
 		newTask.setSeverity(severity);
