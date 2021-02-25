@@ -26,7 +26,7 @@ public class UserController {
 		model.put("username", username);
 		model.put("email", email);
 		model.put("password", password);
-		return "display-task";
+		return "create-task";
 	}
 
 	// Login User
@@ -40,6 +40,7 @@ public class UserController {
 		if (service.searchUser(username,password)) {
 			model.put("username", username);
 			model.put("password", password);
+			//return alltask.jsp instead of createtask			
 			return "display-task";
 		}return null;
 	}
